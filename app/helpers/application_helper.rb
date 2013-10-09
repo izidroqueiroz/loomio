@@ -103,4 +103,14 @@ module ApplicationHelper
     !user_signed_in?
   end
 
+  def add_utm(base_url, source, medium, campaign)
+    base_url += "?utm_source="
+    base_url += source
+    base_url += "&utm_medium="
+    base_url += medium
+    base_url += "&utm_campaign="
+    base_url += campaign
+    base_url
+  end
+
 end
