@@ -57,6 +57,9 @@
                 -if vote.statement.present?
                   = vote.statement
 
+  - unless @motion.user_has_voted?(@user)
+    =render '/motion_mailer/vote_buttons'
+
   %p= link_to(t("email.view_proposal"), motion_url(@motion))
 
   =render 'unsubscribe_link'
