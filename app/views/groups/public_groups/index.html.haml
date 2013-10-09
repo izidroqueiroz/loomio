@@ -16,4 +16,9 @@
         %td.members
           = group.memberships_count
 
+= link_to "Group name"
+= '|'
+= link_to "Number of members", :order => 'memberships'
+
+
 = paginate @groups, :window => 3
