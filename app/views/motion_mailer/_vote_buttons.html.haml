@@ -1,21 +1,12 @@
-#content-proposal
-  %h3= t :state_your_position
-  .vote-buttons.clearfix
-    / %a{ href: new_motion_vote_url(motion_id: @motion.id, position: 'yes'), "title" => t(:yes_position), "data-content" => t(:yes_details), class: "position btn vote-yes", id: "yes-vote" }
-    /   %img{ src: root_url[0..-2]+image_path("hand-yes.png"), :title => t(:yes_position), :alt => t(:yes_position) }
-    =link_to image_tag("hand-yes-email.png", :title => t(:yes_position), :alt => t(:yes_position)),
-             new_motion_vote_url(motion_id: @motion.id, position: 'yes'),
-             "title" => t(:yes_position), "data-content" => t(:yes_details),
-             id: "yes-vote"
-    =link_to image_tag("hand-abstain-email.png", :title => t(:abstain_position), :alt => t(:abstain_position)),
-             new_motion_vote_url(motion_id: @motion.id, position: 'abstain'),
-             "title" => t(:abstain_position), "data-content" => t(:abstain_details),
-             id: "abstain-vote"
-    =link_to image_tag("hand-no-email.png", :title => t(:no_position), :alt => t(:no_position)),
-             new_motion_vote_url(motion_id: @motion.id, position: 'no'),
-             "title" => t(:no_position), "data-content" => t(:no_details),
-             id: "no-vote"
-    =link_to image_tag("hand-block-email.png", :title => t(:block_position), :alt => t(:block_position)),
-             new_motion_vote_url(motion_id: @motion.id, position: 'block'),
-             "title" => t(:block_position), "data-content" => t(:block_details),
-             id: "block-vote"
+/ %a{ href: new_motion_vote_url(motion_id: @motion.id, position: 'yes'), "title" => t(:yes_position), "data-content" => t(:yes_details), class: "position btn vote-yes", id: "yes-vote" }
+/   %img{ src: root_url[0..-2]+image_path("hand-yes.png"), :title => t(:yes_position), :alt => t(:yes_position) }
+%strong= t :state_your_position
+%p
+  =link_to image_tag("hand-yes-email.png", :title => t(:yes_position), :alt => t(:yes_position)),
+           new_motion_vote_url(motion_id: @motion.id, position: 'yes')
+  =link_to image_tag("hand-abstain-email.png", :title => t(:abstain_position), :alt => t(:abstain_position)),
+           new_motion_vote_url(motion_id: @motion.id, position: 'abstain')
+  =link_to image_tag("hand-no-email.png", :title => t(:no_position), :alt => t(:no_position)),
+           new_motion_vote_url(motion_id: @motion.id, position: 'no')
+  =link_to image_tag("hand-block-email.png", :title => t(:block_position), :alt => t(:block_position)),
+           new_motion_vote_url(motion_id: @motion.id, position: 'block')
