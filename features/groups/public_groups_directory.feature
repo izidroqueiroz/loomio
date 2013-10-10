@@ -16,7 +16,7 @@ Feature: Public groups directory
     And I search
     Then I should only see groups that match the search
 
-  Scenario: Person chooses to order list by "Number of members"
+  Scenario: Person chooses to order list by number of members
     When I visit the public groups directory page
-    And I choose to sort the public groups list by "Number of members"
+    And I choose to sort the public groups list by number of members
     Then I should see the groups ordered according to the number of members in the group

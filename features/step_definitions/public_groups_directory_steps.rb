@@ -19,7 +19,7 @@ When(/^I visit the public groups directory page$/) do
   visit '/groups'
 end
 
-Then(/^I should only see public groups with (\d+) or more members$/) do |arg1|
+Then(/^I should only see public groups with 5 or more members$/) do
   find('#directory').should have_content(@public_group1.name)
   find('#directory').should_not have_content(@public_group2.name)
   find('#directory').should_not have_content(@private_group.name)
@@ -40,8 +40,8 @@ Then(/^I should only see groups that match the search$/) do
   find('#directory').should_not have_content @public_group3.name
 end
 
-When(/^I choose to sort the public groups list by "(.*?)"$/) do |arg1|
-  click_link "Number of members"
+When(/^I choose to sort the public groups list by number of members$/) do
+  click_link "Members"
 end
 
 Then(/^I should see the groups ordered according to the number of members in the group$/) do

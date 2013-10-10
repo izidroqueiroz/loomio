@@ -10,8 +10,9 @@ class Groups::PublicGroupsController < BaseController
       @groups = Group.visible_to_the_public.page(params[:page])
     end
     if params[:order] == 'memberships'
-      @groups.sort_by{ |g| g.memberships_count }.reverse!
+      @ordered_groups = @groups.sort_by{ |g| g.memberships_count }.reverse!
+    else
+      @ordered_groups = @groups
     end
   end
 end
-
