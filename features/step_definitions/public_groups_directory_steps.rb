@@ -26,13 +26,13 @@ Then(/^I should only see public groups with 5 or more members$/) do
 end
 
 Then(/^the groups should be ordered by name$/) do
-  @public_group4.name.should < @public_group3.name
-  @public_group3.name.should < @public_group1.name
+  find('#directory tbody tr:first td.group a').text().should == @public_group4.name
+  find('#directory tbody tr:last td.group a').text().should == @public_group1.name
 end
 
 When(/^I search$/) do
   fill_in 'query', with: @public_group1.name
-  click_on 'Search'
+  find('.submit-search').click
 end
 
 Then(/^I should only see groups that match the search$/) do
@@ -41,10 +41,9 @@ Then(/^I should only see groups that match the search$/) do
 end
 
 When(/^I choose to sort the public groups list by number of members$/) do
-  click_link "Members"
+  find('th.group .sort-icon').click
 end
 
 Then(/^I should see the groups ordered according to the number of members in the group$/) do
-  @public_group4.name < @public_group3.name
-  @public_group3.name < @public_group1.name
+  find('#directory tbody tr:first td.members').text().to_i.should == @public_group4.members.count
 end
