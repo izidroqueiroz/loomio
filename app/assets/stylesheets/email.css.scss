@@ -23,6 +23,10 @@ table{
   max-width: 40em;
   border-collapse: collapse;
   margin-bottom: 1em;
+  img{
+    margin-right: .4em;
+    width: 40px;
+  }
 }
 td .border-bottom{ border-bottom: 1px solid #999;}
 th{
@@ -34,6 +38,13 @@ th{
 .abstained{ color: #F0BB67; }
 .blocked{ color: #dd0000; }
 .disagreed{ color: #D49090;}
+
+.yes-link{ color: #90D490;}
+.abstain-link{ color: #F0BB67; }
+.block-link{ color: #dd0000; }
+.no-link{ color: #D49090;}
+
+
 .comment{
   padding-left: 25px;
   max-width: 40em;
@@ -46,3 +57,8 @@ th{
   font-weight: bold;
 }
 .nowrap{ white-space: nowrap; }
+
+.author-action{
+  font-style: italic;
+  font-size: 12pt;
+  }

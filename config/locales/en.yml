@@ -772,7 +772,7 @@ en:
     view_comment: "Click here to view the comment on Loomio"
     view_discussion: "Click here to view this discussion"
     view_group: "Click here to view the group on Loomio"
-    view_proposal: "Click here to view this proposal on Loomio"
+    view_proposal: "View this proposal on Loomio"
     create_discussion:
       intro: "%{who} started a new discussion in %{which_group}:"
       subject: "New discussion - %{which}"
@@ -804,6 +804,8 @@ en:
       intro: "You were mentioned in a discussion titled:"
       said: "%{comment_author} said:"
       subject: "%{who} mentioned you in the %{which} group on Loomio"
+    new_motion_created:
+      intro: "%{author} created a proposal in %{group}:"
     proposal_closed:
       intro: 'Your proposal "%{proposal_name}" has closed.'
       specify_outcome: "Please click here to specify an outcome"
