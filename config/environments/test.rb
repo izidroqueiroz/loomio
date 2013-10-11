@@ -72,4 +72,5 @@ Loomio::Application.configure do
   config.active_support.deprecation = :stderr
 
   config.action_mailer.raise_delivery_errors = true
+  config.middleware.use RackSessionAccess::Middleware
 end
